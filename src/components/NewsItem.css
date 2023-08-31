@@ -1,0 +1,29 @@
+.news-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #291d1d;
+  border-radius: .2em;
+  margin: 1.5em auto;
+  padding: 0 1em;
+  box-shadow: .5em .5em .3em rgba(0, 0, 0, 0.25);
+}
+
+.news-card-title {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+
+img {
+  width: 18em;
+}
+
+button {
+  margin: 1em 0;
+}
+
+a {
+  color: #2e363d;
+}
