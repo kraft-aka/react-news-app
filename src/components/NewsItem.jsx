@@ -15,6 +15,9 @@ export const NewsItem = (props) => {
             Get More Info
           </a>
         </Button>
+        <Button variant="primary" onClick={props.onShow}>
+          Read here
+        </Button>
       </Card.Body>
     </Card>
   );
