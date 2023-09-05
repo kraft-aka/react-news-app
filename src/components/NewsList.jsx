@@ -21,7 +21,7 @@ export const NewsList = () => {
       .then((response) => {
         setIsLoading(true);
         setArticles(response.data.articles);
-        //console.log(response.data.articles);
+        console.log(response.data.articles);
         setIsLoading(false);
       });
   }, []);

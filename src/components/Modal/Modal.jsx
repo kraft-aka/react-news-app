@@ -17,7 +17,6 @@ import classes from "./Modal.module.css";
 // const portalEL = document.getElementById("overlay");
 
 export const Modal = (props) => {
-  console.log(props.newsItems)
   // return (
   //   <>
   //     {ReactDOM.createPortal(<Backdrop onClose={props.onClose} onShow={props.onShow}/>, portalEL)}
