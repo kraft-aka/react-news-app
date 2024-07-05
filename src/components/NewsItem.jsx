@@ -1,14 +1,14 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import "./NewsItem.css";
+
 
 export const NewsItem = (props) => {
   return (
-    <Card className="news-card">
+    <Card className='card text-bg-dark mb-3' style={{ width: '18rem'}}>
       <Card.Img variant="top" src={props.urlToImage} />
-      <Card.Body className="news-card-body">
-        <Card.Title className="news-card-title">{props.title}</Card.Title>
+      <Card.Body>
+        <Card.Title className="text-center">{props.title}</Card.Title>
         <Card.Text>{props.description}</Card.Text>
         <Button variant="primary">
           <a href={props.url} target="_blank">

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { NewsItem } from "./NewsItem";
-import "./NewsList.css";
-import { Modal } from "./Modal/Modal";
+import { NewsItem } from "../components/NewsItem";
+import { Spinner } from "react-bootstrap";
+
 
 export const NewsList = () => {
   const [articles, setArticles] = useState([]);
@@ -46,16 +46,9 @@ export const NewsList = () => {
   return (
     <div className="news-list">
       {isLoading ? (
-        <p style={{ color: "tomato", fontSize: "2em" }}>Loading...</p>
+        <Spinner />
       ) : (
         <ul>{newsItems}</ul>
-      )}
-      {show && (
-        <Modal
-          onShow={showModalHandler}
-          onClose={hideModalHandler}
-          newsItems={newsItems}
-        />
       )}
     </div>
   );
