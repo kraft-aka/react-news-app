@@ -4,7 +4,7 @@ const NavbarComponent = () => {
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="#home">News <Badge bg="danger" className="fs-4">Magazine</Badge></Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
