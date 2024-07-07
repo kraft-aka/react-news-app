@@ -16,7 +16,7 @@ export const NewsItem = (props) => {
             Get More Info
           </a>
         </Button>
-        <Link to={`/news/:${props.id}`}>
+        <Link to={`/news/${props.id}`}>
         <Button variant="primary" onClick={props.onShow}>
           Read here
         </Button>

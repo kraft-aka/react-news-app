@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-
+import  { v4 as uuid } from 'uuid'
 import { NewsItem } from "../components/NewsItem";
 import { Spinner } from "react-bootstrap";
 import { NewsContext } from "../dataProvider/newsDataProvider";
@@ -20,7 +20,7 @@ export const NewsList = () => {
         url={news.url}
         urlToImage={news.urlToImage}
         content={news.content}
-        id={index}
+        id={news.title}
       />
     ));
 
