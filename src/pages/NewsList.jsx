@@ -3,6 +3,7 @@ import axios from "axios";
 import { NewsItem } from "../components/NewsItem";
 import { Spinner } from "react-bootstrap";
 
+
 export const NewsList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,9 +28,9 @@ export const NewsList = () => {
 
   if (!articles) return <p>No articles found!</p>;
 
-  const newsItems = articles.map((news) => (
+  const newsItems = articles.map((news, index) => (
     <NewsItem
-      key={Math.random().toString()}
+      key={index}
       author={news.author}
       description={news.description}
       title={news.title}
@@ -38,6 +39,7 @@ export const NewsList = () => {
       content={news.content}
       onShow={showModalHandler}
       onClose={hideModalHandler}
+      id={index}
     />
   ));
 
