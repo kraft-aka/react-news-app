@@ -4,16 +4,19 @@ import NewsPage from "./pages/NewsPage";
 import Navbar from "./pages/NavbarComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { NewsDataProvider } from "./dataProvider/newsDataProvider";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<NewsList />} />
-          <Route path="/news/:id" element={<NewsPage />} />
-        </Routes>
+        <NewsDataProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<NewsList />} />
+            <Route path="/news/:id" element={<NewsPage />} />
+          </Routes>
+        </NewsDataProvider>
       </BrowserRouter>
     </>
   );

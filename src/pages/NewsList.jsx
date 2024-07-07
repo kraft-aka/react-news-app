@@ -1,51 +1,36 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+
 import { NewsItem } from "../components/NewsItem";
 import { Spinner } from "react-bootstrap";
-
+import { NewsContext } from "../dataProvider/newsDataProvider";
 
 export const NewsList = () => {
-  const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [show, setShow] = useState(false);
+  const { newsData, isLoading, errorMsg } = useContext(NewsContext);
 
-  const showModalHandler = () => setShow(true);
+  if (!newsData && errorMsg) return <p>No articles found!</p>;
 
-  const hideModalHandler = () => setShow(false);
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=45df1892fbc245638f36b304a8d7f9f0"
-      )
-      .then((response) => {
-        setIsLoading(true);
-        setArticles(response.data.articles);
-        console.log(response.data.articles);
-        setIsLoading(false);
-      });
-  }, []);
-
-  if (!articles) return <p>No articles found!</p>;
-
-  const newsItems = articles.map((news, index) => (
-    <NewsItem
-      key={index}
-      author={news.author}
-      description={news.description}
-      title={news.title}
-      url={news.url}
-      urlToImage={news.urlToImage}
-      content={news.content}
-      onShow={showModalHandler}
-      onClose={hideModalHandler}
-      id={index}
-    />
-  ));
+  const newsItems =
+    newsData &&
+    newsData.map((news, index) => (
+      <NewsItem
+        key={index}
+        author={news.author}
+        description={news.description}
+        title={news.title}
+        url={news.url}
+        urlToImage={news.urlToImage}
+        content={news.content}
+        id={index}
+      />
+    ));
 
   return (
     <div className="news-list">
-      {isLoading ? <Spinner /> : <ul>{newsItems}</ul>}
+      {isLoading ? (
+        <Spinner animation="border" role="status" variant="primary" size="lg" />
+      ) : (
+        <ul>{newsItems}</ul>
+      )}
     </div>
   );
 };
