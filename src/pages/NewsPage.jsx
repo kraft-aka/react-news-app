@@ -13,7 +13,7 @@ const NewsPage = () => {
 
   console.log(findNews);
   return (
-    <Container>
+    <Container style={{ paddingTop:'4rem' }}>
       <Card style={{ width: "90%" }} className="d-flex m-5">
         <Card.Body>
           <Card.Header>
