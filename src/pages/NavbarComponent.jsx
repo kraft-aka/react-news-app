@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const NavbarComponent = () => {
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="dark" data-bs-theme="dark" fixed="top">
         <Container fluid>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             News{" "}
             <Badge bg="danger" className="fs-4">
               Magazine
