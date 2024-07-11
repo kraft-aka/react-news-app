@@ -26,7 +26,7 @@ export const NewsCard = (props) => {
         style={{ height: "10rem", width: "auto", objectFit: "cover" }}
       />
       <Card.Body>
-        <Card.Title className="text-center m-2">{title}</Card.Title>
+        <Card.Title className="text-center m-2">{shortenedTitle}...</Card.Title>
         {/* <Card.Text className="m-2 p-2">{shortendDescription}</Card.Text> */}
         <div
           style={{
