@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { NewsContext } from "../dataProvider/newsDataProvider";
 import { Card, Button, Badge, Container } from "react-bootstrap";
@@ -14,6 +14,10 @@ const NewsPage = () => {
     "https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   //const { title, author, content, description, publishedAt, source, url, urlToImage } = findNews;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   console.log(findNews);
   return (
