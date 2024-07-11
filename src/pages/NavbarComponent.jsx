@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Badge, Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { NewsContext } from "../dataProvider/newsDataProvider";
 
 const NavbarComponent = () => {
+  const { setCategory } = useContext(NewsContext);
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
@@ -16,17 +19,26 @@ const NavbarComponent = () => {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
             <NavDropdown title="Categories" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item onClick={() => setCategory("business")}>
+                Business
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCategory("entertainment")}>
+                Entertainment
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCategory("sports")}>
+                Sports
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCategory("health")}>
+                Health
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCategory("science")}>
+                Science
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCategory("technology")}>
+                Technology
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Container>

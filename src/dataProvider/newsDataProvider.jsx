@@ -3,13 +3,14 @@ import axios from "axios";
 
 const NewsContext = createContext();
 
-export const NewsDataProvider = (props) => {
+export const NewsDataProvider = ({ children }) => {
   const [newsData, setNewsData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
+  const [category, setCategory] = useState("general");
 
   const apiKey = import.meta.env.VITE_API_KEY;
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
 
   const getNewsData = async () => {
     try {
@@ -26,9 +27,11 @@ export const NewsDataProvider = (props) => {
     }
   };
 
+  console.log(newsData);
+
   useEffect(() => {
     getNewsData();
-  }, []);
+  }, [category]);
 
   const memoizedNewsData = useMemo(() => newsData, [newsData]);
 
@@ -41,9 +44,11 @@ export const NewsDataProvider = (props) => {
         setErrorMsg,
         isLoading,
         setIsLoading,
+        category,
+        setCategory,
       }}
     >
-      {props.children}
+      {children}
     </NewsContext.Provider>
   );
 };
