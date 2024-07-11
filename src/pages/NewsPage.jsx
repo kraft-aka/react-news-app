@@ -9,11 +9,15 @@ const NewsPage = () => {
   const navigate = useNavigate();
 
   const findNews = newsData.find((news) => news?.title === id);
+
+  const placeholderImg =
+    "https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
   //const { title, author, content, description, publishedAt, source, url, urlToImage } = findNews;
 
   console.log(findNews);
   return (
-    <Container style={{ paddingTop:'4rem' }}>
+    <Container style={{ paddingTop: "4rem" }}>
       <Card style={{ width: "90%" }} className="d-flex m-5">
         <Card.Body>
           <Card.Header>
@@ -32,7 +36,10 @@ const NewsPage = () => {
           </Card.Subtitle>
           <Card.Text className="mt-4 mb-2">{findNews?.description}</Card.Text>
           <Card.Text className="mt-4 mb-2">{findNews?.content}</Card.Text>
-          <Card.Img variant="top" src={findNews?.urlToImage} />
+          <Card.Img
+            variant="top"
+            src={findNews?.urlToImage ?? placeholderImg}
+          />
 
           <Card.Footer>
             <Button
