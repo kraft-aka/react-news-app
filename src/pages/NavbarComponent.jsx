@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { NewsContext } from "../dataProvider/newsDataProvider";
 
 const NavbarComponent = () => {
-  const { setCategory } = useContext(NewsContext);
+  const { setCategory, setCountry } = useContext(NewsContext);
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
@@ -38,7 +38,26 @@ const NavbarComponent = () => {
               <NavDropdown.Item onClick={() => setCategory("technology")}>
                 Technology
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+            </NavDropdown>
+            <NavDropdown title="Countries" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={() => setCountry("de")}>
+                Germany
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCountry("kr")}>
+                Korea
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCountry("gb")}>
+                Greate Britain
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCountry("at")}>
+                Austria
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCountry("nl")}>
+                the Netherlands
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setCountry("tr")}>
+                Turkiye
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Container>

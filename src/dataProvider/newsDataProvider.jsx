@@ -8,9 +8,10 @@ export const NewsDataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [category, setCategory] = useState("general");
+  const [country, setCountry] = useState('us')
 
   const apiKey = import.meta.env.VITE_API_KEY;
-  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
 
   const getNewsData = async () => {
     try {
@@ -31,7 +32,7 @@ export const NewsDataProvider = ({ children }) => {
 
   useEffect(() => {
     getNewsData();
-  }, [category]);
+  }, [category, country]);
 
   const memoizedNewsData = useMemo(() => newsData, [newsData]);
 
@@ -46,6 +47,8 @@ export const NewsDataProvider = ({ children }) => {
         setIsLoading,
         category,
         setCategory,
+        country,
+        setCountry
       }}
     >
       {children}
