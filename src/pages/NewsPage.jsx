@@ -42,6 +42,7 @@ const NewsPage = () => {
           <Card.Text className="mt-4 mb-2">{findNews?.content}</Card.Text>
           <Card.Img
             variant="top"
+            loading="lazy"
             src={findNews?.urlToImage ?? placeholderImg}
           />
 
