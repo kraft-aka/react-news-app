@@ -10,7 +10,6 @@ const NavbarComponent = () => {
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
         <Container fluid>
           <Navbar.Brand href="/">
-            
             <Badge bg="danger" className="fs-4">
               News Magazine
             </Badge>
@@ -20,6 +19,9 @@ const NavbarComponent = () => {
               Home
             </Nav.Link>
             <NavDropdown title="Categories" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={() => setCategory("general")}>
+                General
+              </NavDropdown.Item>
               <NavDropdown.Item onClick={() => setCategory("business")}>
                 Business
               </NavDropdown.Item>
@@ -40,6 +42,9 @@ const NavbarComponent = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Countries" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={() => setCountry("us")}>
+                United States of America
+              </NavDropdown.Item>
               <NavDropdown.Item onClick={() => setCountry("de")}>
                 Germany
               </NavDropdown.Item>
