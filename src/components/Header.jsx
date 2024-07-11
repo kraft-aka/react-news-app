@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header style={{ paddingTop: "6rem", textAlign: "center" }}>
+    <header style={{ paddingTop: "7rem", textAlign: "center" }}>
       <h1>
         <Badge bg="danger" className="p-3">
           {category.toUpperCase()}

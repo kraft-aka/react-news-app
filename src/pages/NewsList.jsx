@@ -25,7 +25,7 @@ export const NewsList = () => {
     ));
 
   return (
-    <Container fluid style={{ paddingTop: '6rem'}} >
+    <Container fluid style={{ paddingTop: '3rem'}} >
       {isLoading ? (
         <Spinner animation="border" role="status" variant="primary" size="lg" />
       ) : (
