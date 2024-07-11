@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { NewsContext } from "../dataProvider/newsDataProvider";
 import { Card, Button, Badge, Container } from "react-bootstrap";
+import { formatDate } from "../utils/dateFormater";
 
 const NewsPage = () => {
   const { newsData } = useContext(NewsContext);
@@ -32,7 +33,7 @@ const NewsPage = () => {
           <Card.Subtitle className="m-2">
             {findNews?.author}{" "}
             <Badge bg="secondary" className="text-end">
-              {findNews?.publishedAt}
+              {formatDate(findNews?.publishedAt)}
             </Badge>{" "}
           </Card.Subtitle>
           <Card.Subtitle className="m-2">
