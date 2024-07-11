@@ -1,10 +1,19 @@
 import { useContext } from "react";
-import { Badge, Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import {
+  Badge,
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { NewsContext } from "../dataProvider/newsDataProvider";
 
 const NavbarComponent = () => {
   const { setCategory, setCountry } = useContext(NewsContext);
+
+  const goToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
@@ -65,6 +74,9 @@ const NavbarComponent = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Button onClick={goToTop} variant="outline-success">
+            Go to top
+          </Button>
         </Container>
       </Navbar>
     </>
