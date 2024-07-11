@@ -11,7 +11,7 @@ export const NewsList = () => {
   const newsItems =
     newsData &&
     newsData.map((news, index) => (
-      <Col key={index} lg='3'>
+      <Col key={index} xl={2} lg={3} md={4} sm={6}>
         <NewsCard
           author={news.author}
           description={news.description}
