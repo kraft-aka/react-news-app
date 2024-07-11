@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NewsItem } from "../components/NewsItem";
+import { NewsCard } from "../components/NewsCard";
 import { Spinner, Container, Row, Col } from "react-bootstrap";
 import { NewsContext } from "../dataProvider/newsDataProvider";
 
@@ -12,7 +12,7 @@ export const NewsList = () => {
     newsData &&
     newsData.map((news, index) => (
       <Col key={index} lg='3'>
-        <NewsItem
+        <NewsCard
           author={news.author}
           description={news.description}
           title={news.title}

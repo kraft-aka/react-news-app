@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const NewsItem = (props) => {
+export const NewsCard = (props) => {
   const { title, url, id, onShow } = props;
   let { urlToImage } = props;
 
