@@ -10,9 +10,9 @@ const NavbarComponent = () => {
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
         <Container fluid>
           <Navbar.Brand href="/">
-            News{" "}
+            
             <Badge bg="danger" className="fs-4">
-              Magazine
+              News Magazine
             </Badge>
           </Navbar.Brand>
           <Nav className="me-auto">
