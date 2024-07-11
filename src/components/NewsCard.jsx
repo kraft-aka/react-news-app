@@ -17,7 +17,7 @@ export const NewsCard = (props) => {
 
   return (
     <Card
-      className="text-bg-dark mb-3"
+      className="card-item text-bg-dark mb-3"
       style={{ maxWidth: "18rem", height: "30rem" }}
     >
       <Card.Img
