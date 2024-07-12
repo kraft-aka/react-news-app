@@ -6,6 +6,8 @@ import {
   Container,
   NavDropdown,
   Button,
+  Form,
+  InputGroup,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { NewsContext } from "../dataProvider/newsDataProvider";
@@ -74,6 +76,15 @@ const NavbarComponent = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Form inline className="px-3">
+            <InputGroup>
+              <Form.Control
+                placeholder="Search..."
+                aria-label="Search..."
+                aria-describedby="search"
+              />
+            </InputGroup>
+          </Form>
           <Button onClick={goToTop} variant="outline-success">
             Go to top
           </Button>
