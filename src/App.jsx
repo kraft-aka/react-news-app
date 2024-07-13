@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NewsList } from "./pages/NewsList";
 import NewsPage from "./pages/NewsPage";
 import Navbar from "./pages/NavbarComponent";
+import PageNotFound from "./components/PageNotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NewsDataProvider } from "./dataProvider/newsDataProvider";
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<NewsList query={query} />} />
             <Route path="/news/:id" element={<NewsPage />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </NewsDataProvider>
       </BrowserRouter>
