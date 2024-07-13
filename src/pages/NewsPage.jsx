@@ -44,6 +44,7 @@ const NewsPage = () => {
           <Card.Img
             variant="top"
             loading="lazy"
+            alt={findNews?.content.slice(0,50)}
             src={findNews?.urlToImage ?? placeholderImg}
           />
 
