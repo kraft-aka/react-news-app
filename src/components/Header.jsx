@@ -5,6 +5,7 @@ import { Badge } from "react-bootstrap";
 const Header = () => {
   const { category, country } = useContext(NewsContext);
 
+  // used to display the values in the dropdown 
   const countryObj = {
     us: "United States of America",
     de: "Germany",

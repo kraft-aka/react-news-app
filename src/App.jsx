@@ -8,12 +8,12 @@ import { NewsDataProvider } from "./dataProvider/newsDataProvider";
 import Header from "./components/Header";
 
 function App() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
+  // receives the query string from navbar
   const getDataFromQuery = (data) => {
     setQuery(data);
-  }
-
+  };
 
   return (
     <>
@@ -22,7 +22,7 @@ function App() {
           <Navbar getDataFromQuery={getDataFromQuery} />
           <Header />
           <Routes>
-            <Route path="/" element={<NewsList query={query}/>} />
+            <Route path="/" element={<NewsList query={query} />} />
             <Route path="/news/:id" element={<NewsPage />} />
           </Routes>
         </NewsDataProvider>

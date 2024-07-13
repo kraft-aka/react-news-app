@@ -9,18 +9,21 @@ const NewsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // finds the partocular news matching useparams
   const findNews = newsData.find((news) => news?.title.slice(0, 10) === id);
 
+  // renders placeholder img if img missed 
   const placeholderImg =
     "https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   //const { title, author, content, description, publishedAt, source, url, urlToImage } = findNews;
 
+  // on load page scrolls to the top of the page
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  console.log(findNews, id);
+  //console.log(findNews, id);
   return (
     <Container style={{ paddingTop: "4rem" }}>
       <Card style={{ width: "90%" }} className="d-flex m-5">

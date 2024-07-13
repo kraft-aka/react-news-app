@@ -6,6 +6,7 @@ export const NewsCard = (props) => {
   const { title, url, id, onShow } = props;
   let { urlToImage } = props;
 
+  // renders the placeholder img if img url missed
   const placeholderImg =
     "https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -13,6 +14,7 @@ export const NewsCard = (props) => {
     urlToImage = placeholderImg;
   }
 
+  // short title for card items 
   const shortenedTitle = (title && title.slice(0, 81)) || null;
 
   return (

@@ -1,3 +1,5 @@
+// formates the date form the string
+
 const formatDate = (dateData) => {
   const d = new Date(dateData);
   const year = d.getFullYear();

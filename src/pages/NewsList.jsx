@@ -11,8 +11,10 @@ export const NewsList = ({ query }) => {
     return news?.title.toLowerCase().includes(query.toLowerCase());
   });
 
+  // renders error text if no data fetched
   if (!newsData && errorMsg) return <p>No articles found!</p>;
 
+  // all data items to be rendered in the main page
   const newsItems =
     newsData &&
     filteredNewsData &&

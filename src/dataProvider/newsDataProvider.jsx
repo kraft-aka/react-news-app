@@ -13,6 +13,7 @@ export const NewsDataProvider = ({ children }) => {
   const apiKey = import.meta.env.VITE_API_KEY;
   const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
 
+  // fetches data from newsapi
   const getNewsData = async () => {
     try {
       setIsLoading(true);
@@ -28,12 +29,12 @@ export const NewsDataProvider = ({ children }) => {
     }
   };
 
-  console.log(newsData);
 
   useEffect(() => {
     getNewsData();
   }, [category, country]);
 
+  // memoizes the data
   const memoizedNewsData = useMemo(() => newsData, [newsData]);
 
   return (

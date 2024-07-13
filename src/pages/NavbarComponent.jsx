@@ -16,12 +16,15 @@ const NavbarComponent = ({ getDataFromQuery }) => {
   const { setCategory, setCountry } = useContext(NewsContext);
   const [inputQuery, setInputQuery] = useState("");
 
+  // gets the input value and passes it the parent component
   const handleInputChange = (e) => {
     setInputQuery(e.target.value);
     getDataFromQuery(inputQuery);
   };
 
+  // scrolls to top 
   const goToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
