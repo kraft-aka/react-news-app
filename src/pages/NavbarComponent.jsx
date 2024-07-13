@@ -24,7 +24,7 @@ const NavbarComponent = ({ getDataFromQuery }) => {
 
   // scrolls to top 
   const goToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  
+
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" fixed="top">
@@ -85,7 +85,7 @@ const NavbarComponent = ({ getDataFromQuery }) => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form inline className="px-3">
+          <Form className="px-3">
             <InputGroup>
               <Form.Control
                 placeholder="Search..."
