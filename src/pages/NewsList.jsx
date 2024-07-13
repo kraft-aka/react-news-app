@@ -25,7 +25,7 @@ export const NewsList = ({ query }) => {
           url={news.url}
           urlToImage={news.urlToImage}
           content={news.content}
-          id={news.title}
+          id={news.title.slice(0,10)}
         />
       </Col>
     ));

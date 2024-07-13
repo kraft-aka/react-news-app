@@ -9,7 +9,7 @@ const NewsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const findNews = newsData.find((news) => news?.title === id);
+  const findNews = newsData.find((news) => news?.title.slice(0, 10) === id);
 
   const placeholderImg =
     "https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -20,7 +20,7 @@ const NewsPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  console.log(findNews);
+  console.log(findNews, id);
   return (
     <Container style={{ paddingTop: "4rem" }}>
       <Card style={{ width: "90%" }} className="d-flex m-5">
@@ -44,7 +44,7 @@ const NewsPage = () => {
           <Card.Img
             variant="top"
             loading="lazy"
-            alt={findNews?.content.slice(0,50)}
+            alt="cover image"
             src={findNews?.urlToImage ?? placeholderImg}
           />
 
