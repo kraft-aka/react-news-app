@@ -33,7 +33,7 @@ export const NewsList = ({ query }) => {
     ));
 
   return (
-    <Container fluid style={{ paddingTop: "12rem" }}>
+    <Container fluid style={{ paddingTop: "12rem" }} className="bg-light">
       {isLoading ? (
         <Spinner animation="border" role="status" variant="primary" size="lg" />
       ) : (
