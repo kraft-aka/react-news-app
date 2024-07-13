@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   Badge,
   Navbar,
@@ -12,8 +12,14 @@ import {
 import { Link } from "react-router-dom";
 import { NewsContext } from "../dataProvider/newsDataProvider";
 
-const NavbarComponent = () => {
+const NavbarComponent = ({ getDataFromQuery }) => {
   const { setCategory, setCountry } = useContext(NewsContext);
+  const [inputQuery, setInputQuery] = useState("");
+
+  const handleInputChange = (e) => {
+    setInputQuery(e.target.value);
+    getDataFromQuery(inputQuery);
+  };
 
   const goToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   return (
@@ -82,6 +88,8 @@ const NavbarComponent = () => {
                 placeholder="Search..."
                 aria-label="Search..."
                 aria-describedby="search"
+                onChange={handleInputChange}
+                value={inputQuery}
               />
             </InputGroup>
           </Form>
