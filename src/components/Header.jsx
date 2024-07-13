@@ -16,12 +16,12 @@ const Header = () => {
   };
 
   return (
-    <header style={{ paddingTop: "7rem", textAlign: "center" }}>
-      <h1>
+    <header className="fixed-top bg-light m-0" style={{ paddingTop: "6rem", textAlign: "center", zIndex: 1 }}>
+      <h1 className="fw-bold">
         <Badge bg="danger" className="p-3">
           {category.toUpperCase()}
         </Badge>{" "}
-        news from{" "}
+        NEWS from{" "}
         <Badge bg="success" className="p-3">
           {countryObj[country]}
         </Badge>
